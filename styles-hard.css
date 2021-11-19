@@ -1,0 +1,270 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    height: 100vh;
+    display: flex;
+    /* background: black; */
+    z-index: -1;
+}
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(68, 79, 238) 50%, rgb(52, 43, 124) 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+h6{
+    text-align: center;
+    padding-top: 2px;
+}
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+#resume {
+    border-radius: 50%;
+    border: white 10px;
+}
+
+.memory-game {
+    width: 1000px;
+    height: 720px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.memory-card {
+    width: calc(16.666% - 10px);
+    height: calc(25% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .3);
+    cursor: pointer;
+}
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    position: absolute;
+    border-radius: 5px;
+    background: rgb(157, 153, 219);
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+.progress-bar-vertical {
+    width: 20px;
+    min-height: 500px;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-top: 8%;
+    background: #d0cece;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-end;
+    -webkit-align-items: flex-end
+}
+
+.progress-bar-vertical .progress-bar {
+    width: 100%;
+    height: 0;
+    -webkit-transition: height 0.6s ease;
+    -o-transition: height 0.6s ease;
+    transition: height 0.6s ease
+}
+
+.progress-striped {
+    background-color: #ff6666;
+    background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+    background-image: -webkit-linear-gradient(0deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -moz-linear-gradient(0deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: -o-linear-gradient(0deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+    background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)
+}
+
+#minutes,
+p,
+#seconds {
+    font-size: 50px;
+    color: white;
+    padding-left: 10px;
+    align-items: center;
+}
+
+#clock {
+    display: flex;
+    height: 80px;
+    width: 170px;
+    margin-right: 3%;
+    margin-top: 4%;
+    border: 3px solid rgb(187, 186, 207);
+    border-radius: 5%;
+}
+
+.right {
+    display: inline-block;
+    margin-top: 5%;
+    margin-right: 4%;
+}
+
+.pause {
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    z-index: 1;
+    margin-top: 100px;
+    margin-left: 30px;
+}
+
+.pause:hover {
+    height: 130px;
+    width: 130px;
+    border: 20px white;
+    transform: translate(-5%, -5%);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.music {
+    margin-top: 320px;
+    margin-left: 30px;
+    /* box-shadow: 1px 1px 1px rgba(0, 0, 0, .3); */
+    cursor: pointer;
+}
+
+#music-icon {
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    height: 120px;
+    width: 120px;
+    z-index: 1;
+}
+#bar {
+    margin-top: 180px;
+    margin-left: 130px;
+    width: 28px;
+    padding: 3px;
+}
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 35px;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    border: 2px white;
+}
+
+.modal-dialog .modal-content {
+    width: 1000px;
+    background-color: rgb(199, 190, 190);
+    border-radius: 20px;
+}
+
+.row {
+    margin: 30px;
+}
+
+.button-6 {
+    align-items: center;
+    background-color: #FFFFFF;
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+}
+
+.button-6:hover,
+.button-6:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+}
+
+.button-6:hover {
+    transform: translateY(-1px);
+}
+
+.button-6:active {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+}

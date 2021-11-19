@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Theme</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .container {
+            padding: 80px 120px;
+        }
+        
+        img:hover {
+            cursor: pointer;
+        }
+        
+        p {
+            font-size: 32px;
+            font-family: monospace;
+            color: whitesmoke;
+        }
+        
+        .bg {
+            animation: slide 3s ease-in-out infinite alternate;
+            background-image: linear-gradient(-60deg, rgb(68, 79, 238) 50%, rgb(52, 43, 124) 50%);
+            bottom: 0;
+            left: -50%;
+            opacity: .5;
+            position: fixed;
+            right: -50%;
+            top: 0;
+            z-index: -1;
+        }
+        
+        .bg2 {
+            animation-direction: alternate-reverse;
+            animation-duration: 4s;
+        }
+        
+        .bg3 {
+            animation-duration: 5s;
+        }
+        
+        h1 {
+            font-family: monospace;
+            font-size: 50px;
+            color: white;
+        }
+        
+        @keyframes slide {
+            0% {
+                transform: translateX(-25%);
+            }
+            100% {
+                transform: translateX(25%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <div class="container text-center">
+        <h1>Select your Theme</h1>
+        <br>
+        <br>
+        <div class="col-sm-4 hover-zoom HP">
+            <p><strong>Harry Potter</strong></p><br>
+            <img src="images/HP/back-photo.jpg" alt="Random Name" width="270" height="270">
+        </div>
+        <div class="col-sm-4 hover-zoom Avengers">
+            <p><strong>Avengers</strong></p><br>
+            <img src="images/avengers/back-photo.jpg" alt="Random Name" width="270" height="270">
+        </div>
+        <div class="col-sm-4 hover-zoom friends">
+            <p><strong>Friends</strong></p><br>
+            <img src="images/friends/back-photo.jpg" alt="Random Name" width="270" height="270">
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    function themesender(theme) {
+
+    }
+    document.querySelector(".Avengers").addEventListener("click", function() {
+        theme = "Avengers";
+        $(document).ready(function() {
+            createCookie("gettheme", theme);
+            function createCookie(name, value) {
+                document.cookie = escape(name) + "=" + escape(value) + "; path=/";
+            };
+        });
+        window.location.href = "level.html";
+    });
+    document.querySelector(".friends").addEventListener("click", function() {
+        theme = "friends";
+        $(document).ready(function() {
+            createCookie("gettheme", theme);
+            function createCookie(name, value) {
+                document.cookie = escape(name) + "=" + escape(value) + "; path=/";
+            };
+        });
+        window.location.href = "level.html";
+    });
+    document.querySelector(".HP").addEventListener("click", function() {
+        theme = "HP";
+        $(document).ready(function() {
+            createCookie("gettheme", theme);
+            function createCookie(name, value) {
+                document.cookie = escape(name) + "=" + escape(value) + "; path=/";
+            };
+        });
+        window.location.href = "level.html";
+    });
+</script>
+
+</html>
